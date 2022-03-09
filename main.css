@@ -1,0 +1,105 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #333;
+  color: white;
+  overflow: hidden;
+}
+
+.container .square {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: inline-block;
+  padding: 60px;
+  box-sizing: border-box;
+  margin: 25px;
+}
+
+.container .square span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  border-radius: 40% 60% 65% 35% / 40% 45% 45% 60%;
+  left: 0;
+  top: 0;
+}
+
+.container .square span:nth-child(1) {
+  animation: ani 5s linear infinite;
+}
+
+.container .square span:nth-child(2) {
+  animation: ani 5s linear infinite reverse;
+  transition: .3s;
+}
+
+.container .square span:nth-child(3) {
+  animation: ani 8s linear infinite;
+  transition: .3s;
+}
+
+.container .square div {
+  text-align: center;
+}
+
+.container .square div h2 {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.container .square div p {
+  margin-top: -15px;
+  line-height: 25px;
+}
+
+.container .square div a {
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 45% 80% 70% 35% /55% 70% 75% 70%;
+  padding: 7px;
+}
+
+@keyframes ani {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container .square:nth-of-type(1):hover span {
+  background-color: crimson;
+  border: 1px solid crimson;
+  z-index: -1;
+}
+
+.container .square:nth-of-type(2):hover span {
+  background-color: dodgerblue;
+  border: 1px solid dodgerblue;
+  z-index: -1;
+}
+
+.container .square:nth-of-type(3):hover span {
+  background-color: yellowgreen;
+  border: 1px solid yellowgreen;
+  z-index: -1;
+}
+
+.container .square:hover span:nth-child(1) {
+  opacity: 0.5;
+}
+
+.container .square:hover span:nth-child(2) {
+  opacity: 0.8;
+}
+
+.container .square::hover span:nth-child(3) {
+  opacity: 0.2;
+}
